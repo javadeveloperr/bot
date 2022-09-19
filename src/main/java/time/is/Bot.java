@@ -37,6 +37,17 @@ public class Bot extends TelegramLongPollingBot {
             keyboardRowList.add(keyboardRow);
             replyKeyboardMarkup.setKeyboard(keyboardRowList);
             sendMessage.setReplyMarkup(replyKeyboardMarkup);
+            
+            if(update.getMessage().getText().equals("/start")){
+                SendMessage m = new SendMessage();
+                m.setChatId(update.getMessage().getChatId().toString());
+                m.setText("test");
+                try{
+                    execute(m);
+                }catch(TelegramApiException e){
+                    System.err.println("log:" + e.getMessage());
+                }
+            }
 
 //
 
