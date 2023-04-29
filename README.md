@@ -1,2 +1,1 @@
-# Telegram Sample Bot
-Java
+simple bot for interesting
